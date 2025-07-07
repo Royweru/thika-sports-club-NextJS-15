@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { Calendar, Clock, Users, MapPin, Phone, Globe, ChevronRight, Star } from 'lucide-react'
 
-const Events = () => {
+export const Events = () => {
   const [activeTab, setActiveTab] = useState('upcoming')
 
   type EventType = "Social Event" | "Tournament" | "Competition" | "Open Play" | "Social";
@@ -256,4 +256,3 @@ const Events = () => {
   )
 }
 
-export default Events

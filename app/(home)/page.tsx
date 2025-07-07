@@ -1,5 +1,6 @@
 
 import About from '@/components/about'
+import { Events } from '@/components/events'
 import Facilities from '@/components/facilities'
 import { Footer } from '@/components/footer'
 import Hero from '@/components/hero'
@@ -17,6 +18,7 @@ export default function Home() {
         <About />
         <Services />
         <Facilities />
+        <Events />
          <Footer />
       </div>
     </>
