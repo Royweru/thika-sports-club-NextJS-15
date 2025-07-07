@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X, ChevronDown } from 'lucide-react'
+import { SignInButton, SignUpButton } from '@clerk/nextjs'
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -67,12 +68,21 @@ export const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block space-x-2">
-            <Link href="/resource-center" className="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl">
-              Resource center
-            </Link>
+        
             <Link href="/membership" className="bg-emerald-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-emerald-700 transition-colors shadow-lg hover:shadow-xl">
               Membership
             </Link>
+            <SignInButton>
+                <button className="px-6 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-500 hover:from-cyan-400 hover:to-teal-500 transition-all shadow-lg relative overflow-hidden">
+                <span className="absolute inset-0 bg-white opacity-20 blur-lg animate-pulse pointer-events-none"></span>
+                <span className="relative z-10">Login</span>
+                </button>
+            </SignInButton>
+            <SignUpButton>
+              <button className="px-6 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-indigo-500 via-blue-600 to-indigo-700 hover:from-indigo-600 hover:to-blue-700 transition-all shadow-lg">
+              Sign Up
+              </button>
+            </SignUpButton>
           </div>
 
           {/* Mobile Menu Button */}
