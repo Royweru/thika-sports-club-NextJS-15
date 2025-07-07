@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X, ChevronDown } from 'lucide-react'
-import { SignInButton, SignUpButton } from '@clerk/nextjs'
+import { SignInButton, SignUpButton,SignedOut,SignedIn } from '@clerk/nextjs'
+import { UserControl } from './user-control'
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -68,8 +69,8 @@ export const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block space-x-2">
-        
-            <Link href="/membership" className="bg-emerald-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-emerald-700 transition-colors shadow-lg hover:shadow-xl">
+          <SignedOut>
+             <Link href="/membership" className="bg-emerald-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-emerald-700 transition-colors shadow-lg hover:shadow-xl">
               Membership
             </Link>
             <SignInButton>
@@ -83,6 +84,13 @@ export const Navbar = () => {
               Sign Up
               </button>
             </SignUpButton>
+          </SignedOut>
+          <SignedIn>
+              <Link href="/membership" className="bg-emerald-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-emerald-700 transition-colors shadow-lg hover:shadow-xl">
+              Membership
+            </Link>
+            <UserControl showName />
+          </SignedIn>
           </div>
 
           {/* Mobile Menu Button */}
