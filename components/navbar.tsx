@@ -41,35 +41,35 @@ export const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <Link href="/" className={`font-medium hover:text-emerald-600 transition-colors ${
+            <Link href="/" className={`font-semibold hover:text-emerald-600 transition-colors ${
               isScrolled ? 'text-gray-900' : 'text-white'
             }`}>
               Home
             </Link>
-            <Link href="/facilities" className={`font-medium hover:text-emerald-600 transition-colors ${
+            <Link href="#about" className={`font-semibold hover:text-emerald-600 transition-colors ${
+              isScrolled ? 'text-gray-900' : 'text-white'
+            }`}>
+              About
+            </Link>
+            <Link href="#facilities" className={`font-semibold hover:text-emerald-600 transition-colors ${
               isScrolled ? 'text-gray-900' : 'text-white'
             }`}>
               Facilities
             </Link>
-            <Link href="/golf" className={`font-medium hover:text-emerald-600 transition-colors ${
-              isScrolled ? 'text-gray-900' : 'text-white'
-            }`}>
-              Golf
-            </Link>
-            <Link href="/events" className={`font-medium hover:text-emerald-600 transition-colors ${
+      
+            <Link href="#events" className={`font-semibold hover:text-emerald-600 transition-colors ${
               isScrolled ? 'text-gray-900' : 'text-white'
             }`}>
               Events
             </Link>
-            <Link href="/resource-center" className={`font-medium hover:text-emerald-600 transition-colors ${
-              isScrolled ? 'text-gray-900' : 'text-white'
-            }`}>
-              Resource Center
-            </Link>
+         
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:block space-x-2">
+            <Link href="/resource-center" className="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl">
+              Resource center
+            </Link>
             <Link href="/membership" className="bg-emerald-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-emerald-700 transition-colors shadow-lg hover:shadow-xl">
               Membership
             </Link>
@@ -91,19 +91,20 @@ export const Navbar = () => {
               <Link href="/" className="block text-gray-900 font-semibold hover:text-emerald-600 transition-colors">
                 Home
               </Link>
-              <Link href="/facilities" className="block text-gray-900 font-semibold hover:text-emerald-600 transition-colors">
+              <Link href="#facilities" className="block text-gray-900 font-semibold hover:text-emerald-600 transition-colors">
                 Facilities
               </Link>
-              <Link href="/golf" className="block text-gray-900 font-semibold hover:text-emerald-600 transition-colors">
+              <Link href="#golf" className="block text-gray-900 font-semibold hover:text-emerald-600 transition-colors">
                 Golf
               </Link>
-              <Link href="/events" className="block text-gray-900 font-semibold hover:text-emerald-600 transition-colors">
+              <Link href="#events" className="block text-gray-900 font-semibold hover:text-emerald-600 transition-colors">
                 Events
               </Link>
-              <Link href="/resource-center" className="block text-gray-900 font-semibold hover:text-emerald-600 transition-colors">
+            
+              <div className="pt-4 border-t">
+                  <Link href="/resource-center" className="block text-gray-900 font-semibold hover:text-emerald-600 transition-colors">
                 Resource Center
               </Link>
-              <div className="pt-4 border-t">
                 <Link href="/membership" className="block w-full text-center bg-emerald-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-emerald-700 transition-colors">
                   Membership
                 </Link>
