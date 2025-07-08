@@ -1,4 +1,3 @@
-'use client'
 import React, { useState, useEffect, useRef } from 'react';
 import { X, Play, Volume2, VolumeX, Maximize2, Minimize2 } from 'lucide-react';
 
@@ -13,7 +12,7 @@ interface VideoModalProps {
 const VideoModal: React.FC<VideoModalProps> = ({
   isOpen,
   onClose,
-  videoUrl = "/videos/golftour.mp4", 
+  videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1",
   title = "Thika Sports Club Virtual Tour",
   description = "Discover the elegance and excellence that defines our century-old legacy"
 }) => {
@@ -90,55 +89,55 @@ const VideoModal: React.FC<VideoModalProps> = ({
       </div>
 
       {/* Modal Container */}
-      <div className={`relative w-full max-w-6xl mx-auto bg-gray-900/90 backdrop-blur-xl rounded-3xl overflow-hidden shadow-2xl border border-gray-700/50 transition-all duration-700 ${
+      <div className={`relative w-full max-w-4xl mx-auto bg-gray-900/90 backdrop-blur-xl rounded-3xl overflow-hidden shadow-2xl border border-gray-700/50 transition-all duration-700 ${
         isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
-      } ${isFullscreen ? 'fixed inset-4 max-w-none rounded-lg' : ''}`}>
+      } ${isFullscreen ? 'fixed inset-4 max-w-none rounded-lg' : 'max-h-[90vh] overflow-y-auto'}`}>
         
         {/* Glowing Border Effect */}
         <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-emerald-500/20 via-cyan-500/20 to-blue-500/20 blur-xl -z-10"></div>
         
         {/* Header */}
-        <div className="relative p-6 border-b border-gray-700/50 bg-gradient-to-r from-gray-900/80 to-gray-800/80">
+        <div className="relative p-4 sm:p-6 border-b border-gray-700/50 bg-gradient-to-r from-gray-900/80 to-gray-800/80">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center">
-                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                  <div className="w-4 h-4 bg-emerald-600 rounded-full"></div>
+            <div className="flex items-center space-x-3 sm:space-x-4">
+              <div className="w-8 h-8 sm:w-12 sm:h-12 bg-emerald-600 rounded-full flex items-center justify-center">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white rounded-full flex items-center justify-center">
+                  <div className="w-3 h-3 sm:w-4 sm:h-4 bg-emerald-600 rounded-full"></div>
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white">{title}</h3>
-                <p className="text-gray-300 text-sm">{description}</p>
+                <h3 className="text-lg sm:text-2xl font-bold text-white">{title}</h3>
+                <p className="text-gray-300 text-xs sm:text-sm">{description}</p>
               </div>
             </div>
             
             {/* Controls */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 sm:space-x-3">
               <button
                 onClick={toggleMute}
-                className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 text-gray-300 hover:text-white transition-all duration-200"
+                className="p-1.5 sm:p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 text-gray-300 hover:text-white transition-all duration-200"
               >
-                {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                {isMuted ? <VolumeX className="w-4 h-4 sm:w-5 sm:h-5" /> : <Volume2 className="w-4 h-4 sm:w-5 sm:h-5" />}
               </button>
               
               <button
                 onClick={toggleFullscreen}
-                className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 text-gray-300 hover:text-white transition-all duration-200"
+                className="p-1.5 sm:p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 text-gray-300 hover:text-white transition-all duration-200"
               >
-                {isFullscreen ? <Minimize2 className="w-5 h-5" /> : <Maximize2 className="w-5 h-5" />}
+                {isFullscreen ? <Minimize2 className="w-4 h-4 sm:w-5 sm:h-5" /> : <Maximize2 className="w-4 h-4 sm:w-5 sm:h-5" />}
               </button>
               
               <button
                 onClick={onClose}
-                className="p-2 rounded-full bg-red-600/20 hover:bg-red-600/30 text-red-400 hover:text-red-300 transition-all duration-200"
+                className="p-1.5 sm:p-2 rounded-full bg-red-600/20 hover:bg-red-600/30 text-red-400 hover:text-red-300 transition-all duration-200"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
             </div>
           </div>
           
           {/* Progress Bar */}
-          <div className="mt-4 w-full bg-gray-700/30 rounded-full h-1 overflow-hidden">
+          <div className="mt-3 sm:mt-4 w-full bg-gray-700/30 rounded-full h-1 overflow-hidden">
             <div 
               className="h-full bg-gradient-to-r from-emerald-500 to-cyan-500 transition-all duration-300 relative"
               style={{ width: `${progress}%` }}
@@ -149,7 +148,7 @@ const VideoModal: React.FC<VideoModalProps> = ({
         </div>
 
         {/* Video Container */}
-        <div className="relative aspect-video bg-black">
+        <div className="relative aspect-video bg-black max-h-[60vh]">
           {/* Video Frame */}
           <iframe
             ref={videoRef}
@@ -180,23 +179,23 @@ const VideoModal: React.FC<VideoModalProps> = ({
         </div>
 
         {/* Footer */}
-        <div className="p-6 bg-gradient-to-r from-gray-900/80 to-gray-800/80 border-t border-gray-700/50">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-6 text-gray-300">
+        <div className="p-3 sm:p-6 bg-gradient-to-r from-gray-900/80 to-gray-800/80 border-t border-gray-700/50">
+          <div className="flex flex-col sm:flex-row items-center justify-between space-y-3 sm:space-y-0">
+            <div className="flex items-center space-x-4 sm:space-x-6 text-gray-300">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                <span className="text-sm">Live Preview</span>
+                <span className="text-xs sm:text-sm">Live Preview</span>
               </div>
-              <div className="text-sm">
+              <div className="text-xs sm:text-sm">
                 Est. 1922 • Premium Sports Club
               </div>
             </div>
             
-            <div className="flex items-center space-x-4">
-              <button className="px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-sm font-medium transition-colors duration-200">
+            <div className="flex items-center space-x-3 sm:space-x-4">
+              <button className="px-4 sm:px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-xs sm:text-sm font-medium transition-colors duration-200">
                 Learn More
               </button>
-              <button className="px-6 py-2 bg-gray-700/50 hover:bg-gray-600/50 text-gray-300 rounded-full text-sm font-medium transition-colors duration-200">
+              <button className="px-4 sm:px-6 py-2 bg-gray-700/50 hover:bg-gray-600/50 text-gray-300 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200">
                 Share
               </button>
             </div>
