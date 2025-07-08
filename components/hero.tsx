@@ -1,10 +1,13 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { ChevronDown, Play, Phone, Mail } from 'lucide-react'
+
+import { Play, Phone, Mail, ChevronRightIcon } from 'lucide-react'
+import VideoModal from './modals/video-modal'
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
-
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
+ 
   const slides = [
     {
       image: "/hero.jpeg",
@@ -13,7 +16,7 @@ const Hero = () => {
       description: "Experience the finest in golf, fitness, and leisure at Kenya's most prestigious sports club since 1922."
     },
     {
-      image: "/hero2.jpg",
+      image: "/hero4.jpg",
       title: "Championship Golf Course",
       subtitle: "18 Holes of Pure Excellence",
       description: "Play on our meticulously maintained championship course, designed to challenge and inspire golfers of all levels."
@@ -33,8 +36,25 @@ const Hero = () => {
     return () => clearInterval(timer)
   }, [slides.length])
 
+  const openVideoModal = () => {
+    setIsVideoModalOpen(true)
+  }
+
+  const closeVideoModal = () => {
+    setIsVideoModalOpen(false)
+  }
   return (
-    <section className="relative h-screen overflow-hidden">
+    <>
+     {/* Video Modal */}
+      <VideoModal
+        isOpen={isVideoModalOpen}
+        onClose={closeVideoModal}
+        videoUrl="/videos/golftour.mp4"
+        title="Thika Sports Club Virtual Tour"
+        description="Discover the elegance and excellence that defines our century-old legacy"
+      />
+      
+      <section className="relative h-screen overflow-hidden">
       {/* Background Images */}
       {slides.map((slide, index) => (
         <div
@@ -53,7 +73,7 @@ const Hero = () => {
       ))}
 
       {/* Content */}
-      <div className="relative z-20 h-full flex items-center">
+      <div className="relative z-20 h-full flex items-center" id='hero'>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="mb-6">
@@ -71,12 +91,23 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group bg-emerald-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
+              <button 
+              className="group bg-emerald-600 text-white px-8 py-4 rounded-full font-semibold
+               hover:bg-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl flex 
+               items-center justify-center space-x-2"
+               onClick={()=>window.location.href='/membership'}
+               >
                 <span>Explore Membership</span>
-                <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
+                <ChevronRightIcon className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
               </button>
               
-              <button className="group bg-white/10 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300 backdrop-blur-sm flex items-center justify-center space-x-2">
+              <button className="group bg-white/10 text-white px-8 py-4 rounded-full
+               font-semibold hover:bg-white/20 transition-all duration-300
+                backdrop-blur-sm flex items-center justify-center space-x-2 hover:cursor-pointer"
+                onClick={()=>{
+                    
+                }}
+                >
                 <Play className="w-5 h-5" />
                 <span>Watch Tour</span>
               </button>
@@ -121,7 +152,11 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      
     </section>
+    </>
+  
   )
 }
 

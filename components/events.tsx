@@ -36,7 +36,7 @@ export const Events = () => {
       type: "Social Event",
       description: "Join us for an evening of networking, entertainment, and fine dining with fellow members.",
       capacity: "150 members",
-      image: "/api/placeholder/400/300",
+      image: "/event.jpg",
       status: "Open for Booking",
       highlights: ["Live Entertainment", "Gourmet Dinner", "Networking"]
     },
@@ -48,7 +48,7 @@ export const Events = () => {
       type: "Tournament",
       description: "Weekly golf tournament for all skill levels. Beat those Monday blues with a great game!",
       capacity: "32 players",
-      image: "/api/placeholder/400/300",
+      image: "/event2.jpg",
       status: "Open for Booking",
       highlights: ["All Skill Levels", "Prizes", "Refreshments"]
     },
@@ -60,7 +60,7 @@ export const Events = () => {
       type: "Competition",
       description: "Test your skills with only 4 clubs! A unique challenge for experienced golfers.",
       capacity: "20 players",
-      image: "/api/placeholder/400/300",
+      image: "/event3.jpg",
       status: "Limited Spots",
       highlights: ["Skill Challenge", "Trophy Awards", "Breakfast Included"]
     },
@@ -72,7 +72,7 @@ export const Events = () => {
       type: "Tournament",
       description: "Weekly Friday tournament with a competitive format and great prizes.",
       capacity: "40 players",
-      image: "/api/placeholder/400/300",
+      image: "/event4.jpg",
       status: "Open for Booking",
       highlights: ["Competitive Format", "Great Prizes", "Post-Game Social"]
     }
@@ -97,7 +97,7 @@ export const Events = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50 py-16">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50 py-16" id='events'>
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
