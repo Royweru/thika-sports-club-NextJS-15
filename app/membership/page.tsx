@@ -13,7 +13,7 @@ const Membership = () => {
       description: "Perfect for families who want to enjoy club activities together",
       price: "KSh 150,000",
       period: "Annual",
-      image: "/api/placeholder/400/300",
+      image: "/memberpackage.jpg",
       icon: Users,
       color: "from-blue-500 to-blue-600",
       features: [
@@ -40,7 +40,7 @@ const Membership = () => {
       description: "Designed for single parents who want quality time with their children",
       price: "KSh 100,000",
       period: "Annual",
-      image: "/api/placeholder/400/300",
+      image: "/memberpackage2.jpg",
       icon: Heart,
       color: "from-emerald-500 to-emerald-600",
       features: [
@@ -67,7 +67,7 @@ const Membership = () => {
       description: "Individual membership for personal enjoyment and networking",
       price: "KSh 75,000",
       period: "Annual",
-      image: "/api/placeholder/400/300",
+      image: "/memberpackage3.jpg",
       icon: Crown,
       color: "from-purple-500 to-purple-600",
       features: [
@@ -140,7 +140,7 @@ const Membership = () => {
       <div 
         className="relative h-96 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1200/600')"
+          backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/hero2.jpg')"
         }}
       >
         <div className="absolute inset-0 flex items-center justify-center">
