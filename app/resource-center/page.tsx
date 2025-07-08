@@ -1,3 +1,4 @@
+ 'use client'
 import React, { useState } from 'react';
 import { FileText, Download, Eye, X, Calendar, TrendingUp, DollarSign, Settings, ChevronRight, Search} from 'lucide-react';
 interface selectedResourceType{
