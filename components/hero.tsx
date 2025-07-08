@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 
 import { Play, Phone, Mail, ChevronRightIcon } from 'lucide-react'
-import VideoModal from './modals/video-modal'
+import { VideoModal } from './modals/video-modal'
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
