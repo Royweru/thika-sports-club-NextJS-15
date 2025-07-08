@@ -53,7 +53,7 @@ const Hero = () => {
         title="Thika Sports Club Virtual Tour"
         description="Discover the elegance and excellence that defines our century-old legacy"
       />
-      
+
       <section className="relative h-screen overflow-hidden">
       {/* Background Images */}
       {slides.map((slide, index) => (
@@ -104,9 +104,7 @@ const Hero = () => {
               <button className="group bg-white/10 text-white px-8 py-4 rounded-full
                font-semibold hover:bg-white/20 transition-all duration-300
                 backdrop-blur-sm flex items-center justify-center space-x-2 hover:cursor-pointer"
-                onClick={()=>{
-                    
-                }}
+                onClick={openVideoModal}
                 >
                 <Play className="w-5 h-5" />
                 <span>Watch Tour</span>
